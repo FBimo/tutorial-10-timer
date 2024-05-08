@@ -78,6 +78,18 @@ fn main() {
         println!("Bimo's Komputer: done!");
     });
 
+    spawner.spawn(async {
+        println!("Bimo's Komputer: howdy2!");
+        TimerFuture::new(Duration::new(2, 0)).await;
+        println!("Bimo's Komputer: done2!");
+    });
+
+    spawner.spawn(async {
+        println!("Bimo's Komputer: howdy3!");
+        TimerFuture::new(Duration::new(2, 0)).await;
+        println!("Bimo's Komputer: done3!");
+    });
+
     println!("Bimo's Komputer: hey hey!");
 
     drop(spawner);
